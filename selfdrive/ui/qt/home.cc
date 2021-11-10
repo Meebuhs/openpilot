@@ -81,10 +81,13 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
 
   // top header
   QHBoxLayout* header_layout = new QHBoxLayout();
-  header_layout->setContentsMargins(15, 15, 15, 0);
+  header_layout->setContentsMargins(250, 15, 15, 0);
   header_layout->setSpacing(16);
 
+  poweroff_img = QImage("../assets/images/button_poweroff.png").scaled(poweroff_btn.width(), poweroff_btn.height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+
   date = new QLabel();
+  date->setStyleSheet("color: #FDD3D6;");
   header_layout->addWidget(date, 1, Qt::AlignHCenter | Qt::AlignLeft);
 
   update_notif = new QPushButton("UPDATE");
@@ -99,12 +102,14 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
   QObject::connect(alert_notif, &QPushButton::clicked, [=] { center_layout->setCurrentIndex(2); });
   header_layout->addWidget(alert_notif, 0, Qt::AlignHCenter | Qt::AlignRight);
 
-  header_layout->addWidget(new QLabel(getBrandVersion()), 0, Qt::AlignHCenter | Qt::AlignRight);
+  version = new QLabel(getBrandVersion());
+  version->setStyleSheet("color: #FDD3D6;");
+  header_layout->addWidget(version, 0, Qt::AlignHCenter | Qt::AlignRight);
 
   main_layout->addLayout(header_layout);
 
   // main content
-  main_layout->addSpacing(25);
+  main_layout->addSpacing(50);
   center_layout = new QStackedLayout();
 
   QWidget* statsAndSetupWidget = new QWidget(this);
@@ -156,6 +161,19 @@ void OffroadHome::showEvent(QShowEvent *event) {
 
 void OffroadHome::hideEvent(QHideEvent *event) {
   timer->stop();
+}
+
+void OffroadHome::mouseReleaseEvent(QMouseEvent *event) {
+  if (poweroff_btn.contains(event->pos())) {
+    if (ConfirmationDialog::confirm("Are you sure you want to power off?", this)) {
+      Hardware::poweroff();
+    }
+  }
+}
+
+void OffroadHome::paintEvent(QPaintEvent *event) {
+  QPainter p(this);
+  p.drawImage(poweroff_btn.x(), poweroff_btn.y(), poweroff_img);
 }
 
 void OffroadHome::refresh() {
