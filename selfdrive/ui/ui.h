@@ -105,10 +105,8 @@ typedef struct UIScene {
   float lead_d_rel;
   float lead_v_rel;
   float angleSteers;
-  float angleSteersDes;
   float gpsAccuracyUblox;
   float altitudeUblox;
-  int engineRPM;
   float aEgo;
   bool enabled;
   int satelliteCount;

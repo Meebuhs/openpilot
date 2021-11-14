@@ -117,6 +117,17 @@ static void update_state(UIState *s) {
     update_model(s, model);
     update_leads(s, model);
   }
+  // if (sm.updated("radarState")) {
+  //   auto radar_state = sm["radarState"].getRadarState();
+  //   s->scene.lead_v_rel = radar_state.getLeadOne().getVRel();
+  //   s->scene.lead_d_rel = radar_state.getLeadOne().getDRel();
+  //   s->scene.lead_status = radar_state.getLeadOne().getStatus();
+  // }
+  if (sm.updated("carState")) {
+    auto car_state = sm["carState"].getCarState();
+    s->scene.angleSteers = car_state.getSteeringAngleDeg();
+    s->scene.aEgo = car_state.getAEgo();
+  }
   if (sm.updated("liveCalibration")) {
     scene.world_objects_visible = true;
     auto rpy_list = sm["liveCalibration"].getLiveCalibration().getRpyCalib();
@@ -149,6 +160,17 @@ static void update_state(UIState *s) {
   } else if ((s->sm->frame - s->sm->rcv_frame("pandaStates")) > 5*UI_FREQ) {
     scene.pandaType = cereal::PandaState::PandaType::UNKNOWN;
   }
+  // if (sm.updated("ubloxGnss")) {
+  //   auto data = sm["ubloxGnss"].getUbloxGnss();
+  //   if (data.which() == cereal::UbloxGnss::MEASUREMENT_REPORT) {
+  //     s->scene.satelliteCount = data.getMeasurementReport().getNumMeas();
+  //   }
+  // }
+  // if (sm.updated("gpsLocationExternal")) {
+  //   auto gpsLocationExternal = sm["gpsLocationExternal"].getGpsLocationExternal();
+  //   s->scene.gpsAccuracyUblox = gpsLocationExternal.getAccuracy();
+  //   s->scene.altitudeUblox = gpsLocationExternal.getAltitude();
+  // }
   if (sm.updated("carParams")) {
     scene.longitudinal_control = sm["carParams"].getCarParams().getOpenpilotLongitudinalControl();
   }
