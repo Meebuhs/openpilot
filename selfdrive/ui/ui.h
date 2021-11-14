@@ -100,6 +100,19 @@ typedef struct UIScene {
 
   cereal::PandaState::PandaType pandaType;
 
+  // Data display
+  int lead_status;
+  float lead_d_rel;
+  float lead_v_rel;
+  float angleSteers;
+  float angleSteersDes;
+  float gpsAccuracyUblox;
+  float altitudeUblox;
+  int engineRPM;
+  float aEgo;
+  bool enabled;
+  int satelliteCount;
+  
   // modelV2
   float lane_line_probs[4];
   float road_edge_stds[2];
