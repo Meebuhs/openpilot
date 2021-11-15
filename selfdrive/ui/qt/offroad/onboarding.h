@@ -124,7 +124,7 @@ private:
   void updateActiveScreen();
 
   Params params;
-  bool accepted_terms = false, training_done = false;
+  bool accepted_terms = true, training_done = true;
 
 signals:
   void onboardingDone();

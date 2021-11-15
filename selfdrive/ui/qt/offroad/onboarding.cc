@@ -166,8 +166,8 @@ void OnboardingWindow::updateActiveScreen() {
 OnboardingWindow::OnboardingWindow(QWidget *parent) : QStackedWidget(parent) {
   std::string current_terms_version = params.get("TermsVersion");
   std::string current_training_version = params.get("TrainingVersion");
-  accepted_terms = params.get("HasAcceptedTerms") == current_terms_version;
-  training_done = params.get("CompletedTrainingVersion") == current_training_version;
+  accepted_terms = true;
+  training_done = true;
 
   TermsPage* terms = new TermsPage(this);
   addWidget(terms);
