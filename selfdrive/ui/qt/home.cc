@@ -106,8 +106,14 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
 
   // top header
   QHBoxLayout* header_layout = new QHBoxLayout();
-  header_layout->setContentsMargins(15, 15, 15, 0);
+  header_layout->setContentsMargins(250, 15, 15, 0);
   header_layout->setSpacing(16);
+
+  poweroff_img = QImage("../assets/images/button_poweroff.png").scaled(poweroff_btn.width(), poweroff_btn.height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+
+  date = new QLabel();
+  date->setStyleSheet("color: #FDD3D6;");
+  header_layout->addWidget(date, 1, Qt::AlignHCenter | Qt::AlignLeft);
 
   update_notif = new QPushButton(tr("UPDATE"));
   update_notif->setVisible(false);
@@ -122,12 +128,13 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
   header_layout->addWidget(alert_notif, 0, Qt::AlignHCenter | Qt::AlignLeft);
 
   version = new ElidedLabel();
+  version->setStyleSheet("color: #FDD3D6;");
   header_layout->addWidget(version, 0, Qt::AlignHCenter | Qt::AlignRight);
 
   main_layout->addLayout(header_layout);
 
   // main content
-  main_layout->addSpacing(25);
+  main_layout->addSpacing(50);
   center_layout = new QStackedLayout();
 
   // Vertical experimental button and drive stats layout
@@ -192,6 +199,19 @@ void OffroadHome::showEvent(QShowEvent *event) {
 
 void OffroadHome::hideEvent(QHideEvent *event) {
   timer->stop();
+}
+
+void OffroadHome::mouseReleaseEvent(QMouseEvent *event) {
+  if (poweroff_btn.contains(event->pos())) {
+    if (ConfirmationDialog::confirm(tr("Are you sure you want to power off?"), tr("Power Off"), this)) {
+      Hardware::poweroff();
+    }
+  }
+}
+
+void OffroadHome::paintEvent(QPaintEvent *event) {
+  QPainter p(this);
+  p.drawImage(poweroff_btn.x(), poweroff_btn.y(), poweroff_img);
 }
 
 void OffroadHome::refresh() {

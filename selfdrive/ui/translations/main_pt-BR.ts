@@ -451,6 +451,14 @@ trabalho definido</translation>
         <source> ALERT</source>
         <translation> ALERTA</translation>
     </message>
+    <message>
+        <source>Are you sure you want to power off?</source>
+        <translation type="unfinished">Tem certeza que quer desligar?</translation>
+    </message>
+    <message>
+        <source>Power Off</source>
+        <translation type="unfinished">Desligar</translation>
+    </message>
 </context>
 <context>
     <name>PairingPopup</name>
