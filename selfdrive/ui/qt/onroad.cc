@@ -344,7 +344,7 @@ void NvgWindow::drawLead(QPainter &painter, const cereal::ModelDataV2::LeadDataV
 
   // chevron
   QPointF chevron[] = {{x + (sz * 1.25), y + sz}, {x, y}, {x - (sz * 1.25), y + sz}};
-  painter.setBrush(redColor(fillAlpha));
+  painter.setBrush(pinkColor(fillAlpha));
   painter.drawPolygon(chevron, std::size(chevron));
 }
 
