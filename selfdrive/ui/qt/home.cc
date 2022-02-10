@@ -7,7 +7,6 @@
 
 #include "selfdrive/common/params.h"
 #include "selfdrive/ui/qt/util.h"
-#include "selfdrive/ui/qt/widgets/drive_stats.h"
 #include "selfdrive/ui/qt/widgets/prime.h"
 
 // HomeWindow: the container for the offroad and onroad UIs
@@ -108,14 +107,19 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
   main_layout->addSpacing(50);
   center_layout = new QStackedLayout();
 
-  QWidget* statsAndSetupWidget = new QWidget(this);
-  QHBoxLayout* statsAndSetup = new QHBoxLayout(statsAndSetupWidget);
-  statsAndSetup->setMargin(0);
-  statsAndSetup->setSpacing(30);
-  statsAndSetup->addWidget(new DriveStats, 1);
-  statsAndSetup->addWidget(new SetupWidget);
+  QWidget* offroadSplashWidget = new QWidget(this);
+  QHBoxLayout* offroadSplash = new QHBoxLayout(offroadSplashWidget);
 
-  center_layout->addWidget(statsAndSetupWidget);
+  offroadSplashImageLabel = new QLabel("");
+  offroadSplashImageLabel->setGeometry(0, 0, 1200, 1000);
+  offroadSplashImageLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+  offroadSplashImageLabel->setPixmap(QPixmap("../assets/images/offroad-splash.png").scaled(offroadSplashImageLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+  offroadSplashImageLabel->adjustSize();
+
+  offroadSplash->setMargin(0);
+  offroadSplash->addWidget(offroadSplashImageLabel);
+
+  center_layout->addWidget(offroadSplashWidget);
 
   // add update & alerts widgets
   update_widget = new UpdateAlert();

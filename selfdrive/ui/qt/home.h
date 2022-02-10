@@ -31,6 +31,7 @@ private:
   QTimer* timer;
   QLabel* date;
   QLabel* version;
+  QLabel* offroadSplashImageLabel;
   QStackedLayout* center_layout;
   UpdateAlert *update_widget;
   OffroadAlert* alerts_widget;
