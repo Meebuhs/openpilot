@@ -64,19 +64,3 @@ public:
   explicit PrimeAdWidget(QWidget* parent = 0);
 };
 
-// container widget
-class SetupWidget : public QFrame {
-  Q_OBJECT
-
-public:
-  explicit SetupWidget(QWidget* parent = 0);
-
-private:
-  PairingPopup *popup;
-  QStackedWidget *mainLayout;
-  PrimeAdWidget *primeAd;
-  PrimeUserWidget *primeUser;
-
-private slots:
-  void replyFinished(const QString &response, bool success);
-};
