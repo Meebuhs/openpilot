@@ -251,27 +251,27 @@
     <name>DriveStats</name>
     <message>
         <source>Drives</source>
-        <translation>Fahrten</translation>
+        <translation type="vanished">Fahrten</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation>Stunden</translation>
+        <translation type="vanished">Stunden</translation>
     </message>
     <message>
         <source>ALL TIME</source>
-        <translation>Gesamtzeit</translation>
+        <translation type="vanished">Gesamtzeit</translation>
     </message>
     <message>
         <source>PAST WEEK</source>
-        <translation>Letzte Woche</translation>
+        <translation type="vanished">Letzte Woche</translation>
     </message>
     <message>
         <source>KM</source>
-        <translation>KM</translation>
+        <translation type="vanished">KM</translation>
     </message>
     <message>
         <source>Miles</source>
-        <translation>Meilen</translation>
+        <translation type="vanished">Meilen</translation>
     </message>
 </context>
 <context>
@@ -448,6 +448,14 @@ location set</source>
     <message>
         <source> ALERT</source>
         <translation> HINWEIS</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to power off?</source>
+        <translation type="unfinished">Bist du sicher, dass du das Gerät ausschalten möchtest?</translation>
+    </message>
+    <message>
+        <source>Power Off</source>
+        <translation type="unfinished">Ausschalten</translation>
     </message>
 </context>
 <context>
@@ -716,15 +724,15 @@ This may take up to a minute.</source>
     <name>SetupWidget</name>
     <message>
         <source>Finish Setup</source>
-        <translation>Einrichtung beenden</translation>
+        <translation type="vanished">Einrichtung beenden</translation>
     </message>
     <message>
         <source>Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.</source>
-        <translation>Koppele dein Gerät mit Comma Connect (connect.comma.ai) und sichere dir dein Comma Prime Angebot.</translation>
+        <translation type="vanished">Koppele dein Gerät mit Comma Connect (connect.comma.ai) und sichere dir dein Comma Prime Angebot.</translation>
     </message>
     <message>
         <source>Pair device</source>
-        <translation>Gerät koppeln</translation>
+        <translation type="vanished">Gerät koppeln</translation>
     </message>
 </context>
 <context>

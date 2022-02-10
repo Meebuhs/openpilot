@@ -6,7 +6,6 @@
 
 #include "selfdrive/ui/qt/offroad/experimental_mode.h"
 #include "selfdrive/ui/qt/util.h"
-#include "selfdrive/ui/qt/widgets/drive_stats.h"
 #include "selfdrive/ui/qt/widgets/prime.h"
 
 // HomeWindow: the container for the offroad and onroad UIs
@@ -137,27 +136,19 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
   main_layout->addSpacing(50);
   center_layout = new QStackedLayout();
 
-  // Vertical experimental button and drive stats layout
-  QWidget* statsAndExperimentalModeButtonWidget = new QWidget(this);
-  QVBoxLayout* statsAndExperimentalModeButton = new QVBoxLayout(statsAndExperimentalModeButtonWidget);
-  statsAndExperimentalModeButton->setSpacing(30);
-  statsAndExperimentalModeButton->setMargin(0);
+  QWidget* offroadSplashWidget = new QWidget(this);
+  QHBoxLayout* offroadSplash = new QHBoxLayout(offroadSplashWidget);
 
-  ExperimentalModeButton *experimental_mode = new ExperimentalModeButton(this);
-  QObject::connect(experimental_mode, &ExperimentalModeButton::openSettings, this, &OffroadHome::openSettings);
+  offroadSplashImageLabel = new QLabel("");
+  offroadSplashImageLabel->setGeometry(0, 0, 1200, 1000);
+  offroadSplashImageLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+  offroadSplashImageLabel->setPixmap(QPixmap("../assets/images/offroad-splash.png").scaled(offroadSplashImageLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+  offroadSplashImageLabel->adjustSize();
 
-  statsAndExperimentalModeButton->addWidget(experimental_mode, 1);
-  statsAndExperimentalModeButton->addWidget(new DriveStats, 1);
+  offroadSplash->setMargin(0);
+  offroadSplash->addWidget(offroadSplashImageLabel);
 
-  // Horizontal experimental + drive stats and setup widget
-  QWidget* statsAndSetupWidget = new QWidget(this);
-  QHBoxLayout* statsAndSetup = new QHBoxLayout(statsAndSetupWidget);
-  statsAndSetup->setMargin(0);
-  statsAndSetup->setSpacing(30);
-  statsAndSetup->addWidget(statsAndExperimentalModeButtonWidget, 1);
-  statsAndSetup->addWidget(new SetupWidget);
-
-  center_layout->addWidget(statsAndSetupWidget);
+  center_layout->addWidget(offroadSplashWidget);
 
   // add update & alerts widgets
   update_widget = new UpdateAlert();

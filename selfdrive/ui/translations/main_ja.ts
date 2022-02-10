@@ -248,33 +248,6 @@
     </message>
 </context>
 <context>
-    <name>DriveStats</name>
-    <message>
-        <source>Drives</source>
-        <translation>運転履歴</translation>
-    </message>
-    <message>
-        <source>Hours</source>
-        <translation>時間</translation>
-    </message>
-    <message>
-        <source>ALL TIME</source>
-        <translation>累計</translation>
-    </message>
-    <message>
-        <source>PAST WEEK</source>
-        <translation>先週</translation>
-    </message>
-    <message>
-        <source>KM</source>
-        <translation>km</translation>
-    </message>
-    <message>
-        <source>Miles</source>
-        <translation>マイル</translation>
-    </message>
-</context>
-<context>
     <name>DriverViewScene</name>
     <message>
         <source>camera starting</source>
@@ -716,21 +689,6 @@ This may take up to a minute.</source>
     <message>
         <source>Something went wrong. Reboot the device.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SetupWidget</name>
-    <message>
-        <source>Finish Setup</source>
-        <translation>セットアップ完了</translation>
-    </message>
-    <message>
-        <source>Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.</source>
-        <translation>デバイスを comma connect (connect.comma.ai)でペアリングし、comma primeの特典を申請してください。</translation>
-    </message>
-    <message>
-        <source>Pair device</source>
-        <translation>デバイスをペアリング</translation>
     </message>
 </context>
 <context>
