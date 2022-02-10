@@ -42,8 +42,8 @@ class TestStartup(unittest.TestCase):
     # TODO: test EventName.startup for release branches
 
     # officially supported car
-    (EventName.startupMaster, TOYOTA.COROLLA, COROLLA_FW_VERSIONS),
-    (EventName.startupMaster, TOYOTA.COROLLA, COROLLA_FW_VERSIONS),
+    (EventName.startup, TOYOTA.COROLLA, COROLLA_FW_VERSIONS),
+    (EventName.startup, TOYOTA.COROLLA, COROLLA_FW_VERSIONS),
 
     # dashcamOnly car
     (EventName.startupNoControl, MAZDA.CX5, CX5_FW_VERSIONS),
@@ -58,8 +58,8 @@ class TestStartup(unittest.TestCase):
     (EventName.startupNoCar, None, COROLLA_FW_VERSIONS[:1]),
 
     # fuzzy match
-    (EventName.startupMaster, TOYOTA.COROLLA, COROLLA_FW_VERSIONS_FUZZY),
-    (EventName.startupMaster, TOYOTA.COROLLA, COROLLA_FW_VERSIONS_FUZZY),
+    (EventName.startup, TOYOTA.COROLLA, COROLLA_FW_VERSIONS_FUZZY),
+    (EventName.startup, TOYOTA.COROLLA, COROLLA_FW_VERSIONS_FUZZY),
   ])
   @with_processes(['controlsd'])
   def test_startup_alert(self, expected_event, car_model, fw_versions):
