@@ -462,6 +462,14 @@ location set</source>
         <source> ALERT</source>
         <translation> 警告</translation>
     </message>
+    <message>
+        <source>Are you sure you want to power off?</source>
+        <translation type="unfinished">シャットダウンしてもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>Power Off</source>
+        <translation type="unfinished">電源を切る</translation>
+    </message>
 </context>
 <context>
     <name>PairingPopup</name>

@@ -462,6 +462,14 @@ location set</source>
         <source> ALERT</source>
         <translation> 알림</translation>
     </message>
+    <message>
+        <source>Are you sure you want to power off?</source>
+        <translation type="unfinished">전원을 종료하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Power Off</source>
+        <translation type="unfinished">전원 종료</translation>
+    </message>
 </context>
 <context>
     <name>PairingPopup</name>

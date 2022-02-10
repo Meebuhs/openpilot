@@ -460,6 +460,14 @@ location set</source>
         <source> ALERT</source>
         <translation> 警报</translation>
     </message>
+    <message>
+        <source>Are you sure you want to power off?</source>
+        <translation type="unfinished">您确定要关机吗？</translation>
+    </message>
+    <message>
+        <source>Power Off</source>
+        <translation type="unfinished">关机</translation>
+    </message>
 </context>
 <context>
     <name>PairingPopup</name>
