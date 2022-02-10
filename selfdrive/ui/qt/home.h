@@ -23,10 +23,15 @@ public:
 private:
   void showEvent(QShowEvent *event) override;
   void hideEvent(QHideEvent *event) override;
+  void mouseReleaseEvent(QMouseEvent *event) override;
+  void paintEvent(QPaintEvent *event) override;
   void refresh();
+  const QRect poweroff_btn = QRect(50, 35, 200, 117);
 
+  QImage poweroff_img;
   QTimer* timer;
   QLabel* date;
+  QLabel* version;
   QStackedLayout* center_layout;
   UpdateAlert *update_widget;
   OffroadAlert* alerts_widget;
