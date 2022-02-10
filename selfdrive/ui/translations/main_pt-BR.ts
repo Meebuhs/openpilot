@@ -248,33 +248,6 @@
     </message>
 </context>
 <context>
-    <name>DriveStats</name>
-    <message>
-        <source>Drives</source>
-        <translation>Dirigidas</translation>
-    </message>
-    <message>
-        <source>Hours</source>
-        <translation>Horas</translation>
-    </message>
-    <message>
-        <source>ALL TIME</source>
-        <translation>TOTAL</translation>
-    </message>
-    <message>
-        <source>PAST WEEK</source>
-        <translation>SEMANA PASSADA</translation>
-    </message>
-    <message>
-        <source>KM</source>
-        <translation>KM</translation>
-    </message>
-    <message>
-        <source>Miles</source>
-        <translation>Milhas</translation>
-    </message>
-</context>
-<context>
     <name>DriverViewScene</name>
     <message>
         <source>camera starting</source>
@@ -735,21 +708,6 @@ trabalho definido</translation>
     <message>
         <source>Start over</source>
         <translation>Inicializar</translation>
-    </message>
-</context>
-<context>
-    <name>SetupWidget</name>
-    <message>
-        <source>Finish Setup</source>
-        <translation>Concluir</translation>
-    </message>
-    <message>
-        <source>Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.</source>
-        <translation>Pareie seu dispositivo com comma connect (connect.comma.ai) e reivindique sua oferta de comma prime.</translation>
-    </message>
-    <message>
-        <source>Pair device</source>
-        <translation>Parear dispositivo</translation>
     </message>
 </context>
 <context>

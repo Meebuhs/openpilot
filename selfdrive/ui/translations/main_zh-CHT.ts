@@ -248,33 +248,6 @@
     </message>
 </context>
 <context>
-    <name>DriveStats</name>
-    <message>
-        <source>Drives</source>
-        <translation>旅程</translation>
-    </message>
-    <message>
-        <source>Hours</source>
-        <translation>小時</translation>
-    </message>
-    <message>
-        <source>ALL TIME</source>
-        <translation>總共</translation>
-    </message>
-    <message>
-        <source>PAST WEEK</source>
-        <translation>上周</translation>
-    </message>
-    <message>
-        <source>KM</source>
-        <translation>公里</translation>
-    </message>
-    <message>
-        <source>Miles</source>
-        <translation>英里</translation>
-    </message>
-</context>
-<context>
     <name>DriverViewScene</name>
     <message>
         <source>camera starting</source>
@@ -731,21 +704,6 @@ location set</source>
     <message>
         <source>Start over</source>
         <translation>重新開始</translation>
-    </message>
-</context>
-<context>
-    <name>SetupWidget</name>
-    <message>
-        <source>Finish Setup</source>
-        <translation>完成設置</translation>
-    </message>
-    <message>
-        <source>Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.</source>
-        <translation>將您的設備與 comma connect (connect.comma.ai) 配對並領取您的 comma 高級會員優惠。</translation>
-    </message>
-    <message>
-        <source>Pair device</source>
-        <translation>配對設備</translation>
     </message>
 </context>
 <context>

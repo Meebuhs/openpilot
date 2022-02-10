@@ -248,33 +248,6 @@
     </message>
 </context>
 <context>
-    <name>DriveStats</name>
-    <message>
-        <source>Drives</source>
-        <translation>주행</translation>
-    </message>
-    <message>
-        <source>Hours</source>
-        <translation>시간</translation>
-    </message>
-    <message>
-        <source>ALL TIME</source>
-        <translation>전체</translation>
-    </message>
-    <message>
-        <source>PAST WEEK</source>
-        <translation>지난주</translation>
-    </message>
-    <message>
-        <source>KM</source>
-        <translation>Km</translation>
-    </message>
-    <message>
-        <source>Miles</source>
-        <translation>Miles</translation>
-    </message>
-</context>
-<context>
     <name>DriverViewScene</name>
     <message>
         <source>camera starting</source>
@@ -731,21 +704,6 @@ location set</source>
     <message>
         <source>Start over</source>
         <translation>다시 시작</translation>
-    </message>
-</context>
-<context>
-    <name>SetupWidget</name>
-    <message>
-        <source>Finish Setup</source>
-        <translation>설정 완료</translation>
-    </message>
-    <message>
-        <source>Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.</source>
-        <translation>장치를 (connect.comma.ai)에서 페어링하고 comma prime 오퍼를 청구합니다.</translation>
-    </message>
-    <message>
-        <source>Pair device</source>
-        <translation>장치 페어링</translation>
     </message>
 </context>
 <context>
