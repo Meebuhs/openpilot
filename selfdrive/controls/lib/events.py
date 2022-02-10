@@ -277,7 +277,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.startup: {
     ET.WARNING: Alert(
-      "Bangers only, play garbage and I'll yeet us into a wall",
+      "Yer gonna die",
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .1),
