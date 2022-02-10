@@ -472,6 +472,14 @@ O Modo Firehose permite maximizar o envio de dados de treinamento para melhorar 
         <source> ALERT</source>
         <translation> ALERTA</translation>
     </message>
+    <message>
+        <source>Are you sure you want to power off?</source>
+        <translation type="unfinished">Tem certeza que quer desligar?</translation>
+    </message>
+    <message>
+        <source>Power Off</source>
+        <translation type="unfinished">Desligar</translation>
+    </message>
 </context>
 <context>
     <name>OnroadAlerts</name>

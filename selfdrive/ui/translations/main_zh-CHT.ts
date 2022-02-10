@@ -470,6 +470,14 @@ Firehose Mode allows you to maximize your training data uploads to improve openp
         <source> ALERT</source>
         <translation> 提醒</translation>
     </message>
+    <message>
+        <source>Are you sure you want to power off?</source>
+        <translation type="unfinished">您確定您要關機嗎？</translation>
+    </message>
+    <message>
+        <source>Power Off</source>
+        <translation type="unfinished">關機</translation>
+    </message>
 </context>
 <context>
     <name>OnroadAlerts</name>
