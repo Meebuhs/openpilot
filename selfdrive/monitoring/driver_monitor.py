@@ -289,46 +289,47 @@ class DriverStatus():
       self.hi_stds = 0
 
   def update_events(self, events, driver_engaged, ctrl_active, standstill):
-    if (driver_engaged and self.awareness > 0) or not ctrl_active:
-      # reset only when on disengagement if red reached
-      self.awareness = 1.
-      self.awareness_active = 1.
-      self.awareness_passive = 1.
-      return
+    return
+    # if (driver_engaged and self.awareness > 0) or not ctrl_active:
+    #   # reset only when on disengagement if red reached
+    #   self.awareness = 1.
+    #   self.awareness_active = 1.
+    #   self.awareness_passive = 1.
+    #   return
 
-    driver_attentive = self.driver_distraction_filter.x < 0.37
-    awareness_prev = self.awareness
+    # driver_attentive = self.driver_distraction_filter.x < 0.37
+    # awareness_prev = self.awareness
 
-    if (driver_attentive and self.face_detected and self.pose.low_std and self.awareness > 0):
-      # only restore awareness when paying attention and alert is not red
-      self.awareness = min(self.awareness + ((self.settings._RECOVERY_FACTOR_MAX-self.settings._RECOVERY_FACTOR_MIN)*(1.-self.awareness)+self.settings._RECOVERY_FACTOR_MIN)*self.step_change, 1.)
-      if self.awareness == 1.:
-        self.awareness_passive = min(self.awareness_passive + self.step_change, 1.)
-      # don't display alert banner when awareness is recovering and has cleared orange
-      if self.awareness > self.threshold_prompt:
-        return
+    # if (driver_attentive and self.face_detected and self.pose.low_std and self.awareness > 0):
+    #   # only restore awareness when paying attention and alert is not red
+    #   self.awareness = min(self.awareness + ((self.settings._RECOVERY_FACTOR_MAX-self.settings._RECOVERY_FACTOR_MIN)*(1.-self.awareness)+self.settings._RECOVERY_FACTOR_MIN)*self.step_change, 1.)
+    #   if self.awareness == 1.:
+    #     self.awareness_passive = min(self.awareness_passive + self.step_change, 1.)
+    #   # don't display alert banner when awareness is recovering and has cleared orange
+    #   if self.awareness > self.threshold_prompt:
+    #     return
 
-    standstill_exemption = standstill and self.awareness - self.step_change <= self.threshold_prompt
-    certainly_distracted = self.driver_distraction_filter.x > 0.63 and self.driver_distracted and self.face_detected
-    maybe_distracted = self.hi_stds > self.settings._HI_STD_FALLBACK_TIME or not self.face_detected
-    if certainly_distracted or maybe_distracted:
-      # should always be counting if distracted unless at standstill and reaching orange
-      if not standstill_exemption:
-        self.awareness = max(self.awareness - self.step_change, -0.1)
+    # standstill_exemption = standstill and self.awareness - self.step_change <= self.threshold_prompt
+    # certainly_distracted = self.driver_distraction_filter.x > 0.63 and self.driver_distracted and self.face_detected
+    # maybe_distracted = self.hi_stds > self.settings._HI_STD_FALLBACK_TIME or not self.face_detected
+    # if certainly_distracted or maybe_distracted:
+    #   # should always be counting if distracted unless at standstill and reaching orange
+    #   if not standstill_exemption:
+    #     self.awareness = max(self.awareness - self.step_change, -0.1)
 
-    alert = None
-    if self.awareness <= 0.:
-      # terminal red alert: disengagement required
-      alert = EventName.driverDistracted if self.active_monitoring_mode else EventName.driverUnresponsive
-      self.terminal_time += 1
-      if awareness_prev > 0.:
-        self.terminal_alert_cnt += 1
-    elif self.awareness <= self.threshold_prompt:
-      # prompt orange alert
-      alert = EventName.promptDriverDistracted if self.active_monitoring_mode else EventName.promptDriverUnresponsive
-    elif self.awareness <= self.threshold_pre:
-      # pre green alert
-      alert = EventName.preDriverDistracted if self.active_monitoring_mode else EventName.preDriverUnresponsive
+    # alert = None
+    # if self.awareness <= 0.:
+    #   # terminal red alert: disengagement required
+    #   alert = EventName.driverDistracted if self.active_monitoring_mode else EventName.driverUnresponsive
+    #   self.terminal_time += 1
+    #   if awareness_prev > 0.:
+    #     self.terminal_alert_cnt += 1
+    # elif self.awareness <= self.threshold_prompt:
+    #   # prompt orange alert
+    #   alert = EventName.promptDriverDistracted if self.active_monitoring_mode else EventName.promptDriverUnresponsive
+    # elif self.awareness <= self.threshold_pre:
+    #   # pre green alert
+    #   alert = EventName.preDriverDistracted if self.active_monitoring_mode else EventName.preDriverUnresponsive
 
-    if alert is not None:
-      events.add(alert)
+    # if alert is not None:
+    #   events.add(alert)
